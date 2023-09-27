@@ -11,7 +11,7 @@ else:
 
     if board_size <= 0 or board_size >= 26:
         board_size = None
-        print(name, " you entered illegal board size")
+        print(name, "you entered illegal board size")
     else:
         board_size_str = str(board_size)
         number_of_mines = None
