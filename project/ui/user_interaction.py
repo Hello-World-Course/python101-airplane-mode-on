@@ -1,6 +1,6 @@
-name = input ("Hello, whats your name?")
+name = input("Hello, whats your name?")
 
-if len (name) < 2:
+if len(name) < 3:
     print("Your name is too short")
 
 else:
@@ -17,5 +17,3 @@ else:
         else:
             number_of_mines_str = str(number_of_mines)
             print(name + ", the board size is: " + board_size_str + ", number of mines is: " + number_of_mines_str + ", ENJOY!")
-
-
