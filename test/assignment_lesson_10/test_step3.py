@@ -17,110 +17,194 @@ class TestUi(AssignmentTester):
     @mock.patch('builtins.input', side_effect=['Dan', '9', '40'])
     def test_1_name(self, mock_input, message):
         # test
+        ######
         import project.ui.user_interaction as user_interaction
         expected_result = True
         real_result = user_interaction.is_name_valid('Alon')
         # verify
-        message.explanation = {'value': 'INPUT_REQUEST_MISMATCH', 'params': {'order': 0}}
+        message.explanation = {'value': 'CODE_MISMATCH'}
         self.assertEqualWithMessage(real_result, expected_result, msg=message)
 
     @devin_test_decorator
     @mock.patch('builtins.input', side_effect=['Dan', '9', '40'])
     def test_1_name_2(self, mock_input, message):
         # test
+        ######
         import project.ui.user_interaction as user_interaction
         expected_result = False
         real_result = user_interaction.is_name_valid('A')
         # verify
-        message.explanation = {'value': 'INPUT_REQUEST_MISMATCH', 'params': {'order': 1}}
+        message.explanation = {'value': 'CODE_MISMATCH'}
         self.assertEqualWithMessage(real_result, expected_result, msg=message)
 
     @devin_test_decorator
     @mock.patch('builtins.input', side_effect=['Dan', '9', '40'])
     def test_1_name_3(self, mock_input, message):
         # test
+        ######
         import project.ui.user_interaction as user_interaction
         expected_result = False
         real_result = user_interaction.is_name_valid('')
         # verify
-        message.explanation = {'value': 'INPUT_REQUEST_MISMATCH', 'params': {'order': 2}}
+        message.explanation = {'value': 'CODE_MISMATCH'}
         self.assertEqualWithMessage(real_result, expected_result, msg=message)
 
     @devin_test_decorator
     @mock.patch('builtins.input', side_effect=['Dan', '9', '40'])
     def test_2_board_size_1(self, mock_input, message):
         # test
+        ######
         import project.ui.user_interaction as user_interaction
         expected_result = False
         real_result = user_interaction.is_board_size_valid(0)
         # verify
-        message.explanation = {'value': 'INPUT_REQUEST_MISMATCH', 'params': {'order': 0}}
+        message.explanation = {'value': 'CODE_MISMATCH'}
         self.assertEqualWithMessage(real_result, expected_result, msg=message)
 
     @devin_test_decorator
     @mock.patch('builtins.input', side_effect=['Dan', '9', '40'])
     def test_2_board_size_2(self, mock_input, message):
         # test
+        ######
         import project.ui.user_interaction as user_interaction
         expected_result = False
         real_result = user_interaction.is_board_size_valid(-1)
         # verify
-        message.explanation = {'value': 'INPUT_REQUEST_MISMATCH', 'params': {'order': 1}}
+        message.explanation = {'value': 'CODE_MISMATCH'}
         self.assertEqualWithMessage(real_result, expected_result, msg=message)
 
     @devin_test_decorator
     @mock.patch('builtins.input', side_effect=['Dan', '9', '40'])
     def test_2_board_size_3(self, mock_input, message):
         # test
+        ######
         import project.ui.user_interaction as user_interaction
         expected_result = True
         real_result = user_interaction.is_board_size_valid(7)
         # verify
-        message.explanation = {'value': 'INPUT_REQUEST_MISMATCH', 'params': {'order': 2}}
+        message.explanation = {'value': 'CODE_MISMATCH'}
         self.assertEqualWithMessage(real_result, expected_result, msg=message)
 
     @devin_test_decorator
     @mock.patch('builtins.input', side_effect=['Dan', '9', '40'])
-    def test_3_number_of_mines_1(self,mock_input, message):
+    def test_3_number_of_mines_1(self, mock_input, message):
         # test
+        ######
         import project.ui.user_interaction as user_interaction
         expected_result = False
-        real_result = user_interaction.is_number_of_mines_valid(0, 5)
+        real_result = user_interaction.is_number_of_mines_valid(5, 0)
         # verify
-        message.explanation = {'value': 'INPUT_REQUEST_MISMATCH', 'params': {'order': 0}}
+        message.explanation = {'value': 'CODE_MISMATCH'}
         self.assertEqualWithMessage(real_result, expected_result, msg=message)
 
     @devin_test_decorator
     @mock.patch('builtins.input', side_effect=['Dan', '9', '40'])
     def test_3_number_of_mines_2(self, mock_input, message):
         # test
+        ######
         import project.ui.user_interaction as user_interaction
         expected_result = False
-        real_result = user_interaction.is_number_of_mines_valid(13, 5)
+        real_result = user_interaction.is_number_of_mines_valid(5, 13)
         # verify
-        message.explanation = {'value': 'INPUT_REQUEST_MISMATCH', 'params': {'order': 1}}
+        message.explanation = {'value': 'CODE_MISMATCH'}
         self.assertEqualWithMessage(real_result, expected_result, msg=message)
 
     @devin_test_decorator
     @mock.patch('builtins.input', side_effect=['Dan', '9', '40'])
     def test_3_number_of_mines_3(self, mock_input, message):
         # test
+        ######
         import project.ui.user_interaction as user_interaction
         expected_result = True
-        real_result = user_interaction.is_number_of_mines_valid(7, 5)
+        real_result = user_interaction.is_number_of_mines_valid(5, 7)
         # verify
-        message.explanation = {'value': 'INPUT_REQUEST_MISMATCH', 'params': {'order': 2}}
+        message.explanation = {'value': 'CODE_MISMATCH'}
         self.assertEqualWithMessage(real_result, expected_result, msg=message)
 
     @devin_test_decorator
     @mock.patch('sys.stdout', new_callable=io.StringIO)
-    @mock.patch('builtins.input', side_effect=['Dan', '9', '40'])
-    def test_full_interaction(self, mock_input, mock_stdout, message):
+    @mock.patch('builtins.input', side_effect=['D', '9', '40'])
+    def test_full_interaction_wrong_name_verify_return(self, mock_input, mock_stdout, message):
         # test
+        ######
         import project.ui.user_interaction as user_interaction
-
-        expected_result = ('Dan', 9, 40)
         real_result = user_interaction.register_user()
         # verify
-        message.explanation = {'value': 'INPUT_REQUEST_MISMATCH', 'params': {'order': 0}}
+        expected_result = (None, None, None)
         self.assertEqualWithMessage(real_result, expected_result, msg=message)
+
+    @devin_test_decorator
+    @mock.patch('sys.stdout', new_callable=io.StringIO)
+    @mock.patch('builtins.input', side_effect=['D', '9', '40'])
+    def test_full_interaction_wrong_name_verify_output(self, mock_input, mock_stdout, message):
+        # test
+        ######
+        import project.ui.user_interaction as user_interaction
+        user_interaction.register_user()
+        # verify
+        expected_result = "Your name is too short\n"
+        real_result = mock_stdout.getvalue()
+        self.assertEqualWithMessage(real_result, expected_result, msg=message)
+
+    @devin_test_decorator
+    @mock.patch('sys.stdout', new_callable=io.StringIO)
+    @mock.patch('builtins.input', side_effect=['Dan', '0', '40'])
+    def test_full_interaction_wrong_board_size_verify_return(self, mock_input, mock_stdout, message):
+        # test
+        ######
+        import project.ui.user_interaction as user_interaction
+        real_result = user_interaction.register_user()
+        # verify
+        expected_result = (None, None, None)
+        self.assertEqualWithMessage(real_result, expected_result, msg=message)
+
+    @devin_test_decorator
+    @mock.patch('sys.stdout', new_callable=io.StringIO)
+    @mock.patch('builtins.input', side_effect=['Dan', '0', '40'])
+    def test_full_interaction_wrong_board_size_verify_output(self, mock_input, mock_stdout, message):
+        # test
+        ######
+        import project.ui.user_interaction as user_interaction
+        user_interaction.register_user()
+        # verify
+        expected_result = "Dan, you have entered illegal board size\n"
+        real_result = mock_stdout.getvalue()
+        self.assertEqualWithMessage(real_result, expected_result, msg=message)
+
+    @devin_test_decorator
+    @mock.patch('sys.stdout', new_callable=io.StringIO)
+    @mock.patch('builtins.input', side_effect=['Dan', '9', '41'])
+    def test_full_interaction_wrong_mines_verify_return(self, mock_input, mock_stdout, message):
+        # test
+        ######
+        import project.ui.user_interaction as user_interaction
+        real_result = user_interaction.register_user()
+        # verify
+        expected_result = (None, None, None)
+        self.assertEqualWithMessage(real_result, expected_result, msg=message)
+
+    @devin_test_decorator
+    @mock.patch('sys.stdout', new_callable=io.StringIO)
+    @mock.patch('builtins.input', side_effect=['Dan', '9', '41'])
+    def test_full_interaction_wrong_mines_verify_output(self, mock_input, mock_stdout, message):
+        # test
+        ######
+        import project.ui.user_interaction as user_interaction
+        user_interaction.register_user()
+        # verify
+        expected_result = "Dan, you have entered illegal number of mines\n"
+        real_result = mock_stdout.getvalue()
+        self.assertEqualWithMessage(real_result, expected_result, msg=message)
+
+    @devin_test_decorator
+    @mock.patch('sys.stdout', new_callable=io.StringIO)
+    @mock.patch('builtins.input', side_effect=['i' for i in range(1000)])
+    def test_0_verify_no_input(self, mock_input, mock_stdout, message):
+        import project.ui.user_interaction as user_interaction
+        number_of_times_input_was_called = mock_input.call_count
+        message.explanation = {'value': "UNNECESSARY_INPUT"}
+        # we dont want to show the fake input we provide here neto to prevent waiting
+        message.input_values = None
+        # This supposed to assertEqual and not assertEqualWithMessage on purpose
+        self.assertEqual(0, number_of_times_input_was_called,
+                         msg=message)
