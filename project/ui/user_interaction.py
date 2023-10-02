@@ -1,25 +1,36 @@
-name = None
-name = input("Hello, whats your name?")
+def is_name_valid(name):
+    if len(name) > 2:
+        return True
 
-if len(name) < 3:
-    name = None
-    print("Your name is too short")
 
-else:
-    board_size = None
-    board_size = int(input(name + ", please choose board size:"))
+def is_board_size_valid(board_size):
+    if 0 < board_size <= 26:
+        return True
 
-    if board_size <= 0 or board_size >= 26:
-        board_size = None
-        print(name, "you entered illegal board size")
-    else:
-        board_size_str = str(board_size)
-        number_of_mines = None
-        number_of_mines = int(input(name + ", for board size " + board_size_str + ", choose number of mines to allocate:"))
 
-        if number_of_mines <= 0 or number_of_mines > board_size / 2:
-            number_of_mines = None
-            print(name, "you entered illegal number of mines")
-        else:
-            number_of_mines_str = str(number_of_mines)
-            print(name + ", the board size is: " + board_size_str + ", number of mines is: " + number_of_mines_str + ", ENJOY!")
+def is_number_of_mines_valid(board_size, number_of_mines):
+    if 0 < number_of_mines <= board_size / 2:
+        return True
+
+
+def register_user():
+    player_name = input("Hello, what's your name?")
+    if not is_name_valid(player_name):
+        print("Your name is too short")
+        return None, None, None
+
+    board_size = input(player_name + ", please choose board size:")
+    if not is_board_size_valid(int(board_size)):
+        print(player_name, "you entered illegal board size")
+        return None, None, None
+
+    number_of_mines = input(player_name + ", for board size " + board_size + ", choose number of mines to allocate:")
+    if not is_number_of_mines_valid(int(board_size), int(number_of_mines)):
+        print(player_name, "you entered illegal number of mines")
+        return None, None, None
+
+    return player_name, int(board_size), int(number_of_mines)
+
+player_name, board_size, mines_num = register_user()
+if player_name:
+    print(f"Registered Player: {player_name}, Board Size: {board_size}, Number of Mines: {mines_num}")
