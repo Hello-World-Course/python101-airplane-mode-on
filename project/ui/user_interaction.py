@@ -31,3 +31,4 @@ def register_user():
 player_name, board_size, mines_num = register_user()
 if player_name:
     print(f"Registered Player: {player_name}, Board Size: {board_size}, Number of Mines: {mines_num}")
+
