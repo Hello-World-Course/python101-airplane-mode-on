@@ -200,9 +200,9 @@ class TestUi(AssignmentTester):
     @mock.patch('sys.stdout', new_callable=io.StringIO)
     @mock.patch('builtins.input', side_effect=['i' for i in range(1000)])
     def test_0_verify_no_input(self, mock_input, mock_stdout, message):
+        message.explanation = {'value': "UNNECESSARY_INPUT"}
         import project.ui.user_interaction as user_interaction
         number_of_times_input_was_called = mock_input.call_count
-        message.explanation = {'value': "UNNECESSARY_INPUT"}
         # we dont want to show the fake input we provide here neto to prevent waiting
         message.input_values = None
         # This supposed to assertEqual and not assertEqualWithMessage on purpose
