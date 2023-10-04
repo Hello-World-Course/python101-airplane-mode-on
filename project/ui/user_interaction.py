@@ -17,22 +17,23 @@ def is_number_of_mines_valid(board_size, number_of_mines):
 
 
 
-player_name = input("Hello, what's your name?")
 
-if not is_name_valid(player_name):
-    print("Your name is too short")
-    player_name = None
+def register_user():
+    player_name = input("Hello, what's your name?")
+    if not is_name_valid(player_name):
+        print("Your name is too short")
+        player_name = None
 
 
-board_size = input(player_name + ", please choose board size:")
-if not is_board_size_valid(int(board_size)):
-   print(player_name, "you entered illegal board size")
-   board_size = None
+    board_size = input(player_name + ", please choose board size:")
+    if not is_board_size_valid(int(board_size)):
+        print(player_name, "you entered illegal board size")
+        board_size = None
 
-number_of_mines = input(player_name + ", for board size " + board_size + ", choose number of mines to allocate:")
-if not is_number_of_mines_valid(int(board_size), int(number_of_mines)):
-   print(player_name, "you entered illegal number of mines")
-   number_of_mines = None
+    number_of_mines = input(player_name + ", for board size " + board_size + ", choose number of mines to allocate:")
+    if not is_number_of_mines_valid(int(board_size), int(number_of_mines)):
+        print(player_name, "you entered illegal number of mines")
+        number_of_mines = None
 
-print(player_name + ", the board size is: " + board_size + ", number of mines is: " + number_of_mines + ", ENJOY!")
+    return player_name, int(board_size), int(number_of_mines)
 
