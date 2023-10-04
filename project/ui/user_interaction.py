@@ -33,7 +33,7 @@ def register_user():
 
     number_of_mines = int(input(player_name + ", for board size " + str(board_size) + ", choose number of mines to allocate:"))
     if not is_number_of_mines_valid((board_size), (number_of_mines)):
-        print(player_name + "you have entered illegal number of mines")
+        print(player_name + ", you have entered illegal number of mines")
         number_of_mines = None
         return None, None, None
 
