@@ -37,3 +37,4 @@ def register_user():
 
     return player_name, int(board_size), int(number_of_mines)
 
+
