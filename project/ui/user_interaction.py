@@ -35,6 +35,4 @@ def register_user():
         print(player_name, "you entered illegal number of mines")
         number_of_mines = None
 
-    return player_name, int(board_size), int(number_of_mines)
-
-
+    print (player_name + ", the board size is: " + board_size + ", number of mines is: " + number_of_mines + ", enjoy!")
