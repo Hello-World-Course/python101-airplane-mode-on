@@ -8,4 +8,4 @@
 # בתרגיל הזה כל שעליכם לעשות זה לכתוב פקודת הדפסה בודדת עם המלל הבא
 # "Hello World I Love Python!"
 
-# WRITE CODE HERE:
+print("Hello World I Love Python!")
