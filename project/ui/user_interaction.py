@@ -6,7 +6,7 @@ name = input("Hello, whats your name")
 # name length check:
 
 name_length = len(name)
-if name_length <= 2:
+if name_length < 3:
     print("Your name is too short")
     name = None
 
@@ -15,7 +15,7 @@ else:
 
 # bord size check:
 
-if (board_size <= 0) or board_size >= 26:
+if (board_size < 1) or board_size >= 26:
     print(f"{name}, you have entered illegal board size")
     board_size = None
 
@@ -24,7 +24,7 @@ else:
 
 # number of mines check:
 
-if (number_of_mines < 0) or  number_of_mines > (board_size / 2):
+if (number_of_mines < 1) or  number_of_mines >= (board_size / 2):
     print(f"{name}, you have entered illegal number of mines")
     number_of_mines = None
 
