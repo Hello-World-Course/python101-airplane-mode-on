@@ -15,7 +15,7 @@ else:
 
 # bord size check:
 
-if ((board_size % 1) != 0) or board_size >= 26:
+if (board_size <= 0) or board_size >= 26:
     print(f"{name}, you have entered illegal board size")
     board_size = None
 
