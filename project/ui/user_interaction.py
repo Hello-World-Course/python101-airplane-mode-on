@@ -1,13 +1,11 @@
 # THIS CODE IS WRONG, FIX IT AND ADD NEW CODE
-name = None
-board_size = None
-number_of_mines = None
 
-name = input("Hello, whats your name")
+name = str(input("Hello, whats your name"))
 
 # name length check:
 
-name_length = len(name)
+(name_length) = len(name)
+
 if name_length < 3:
     print("Your name is too short")
     name = None
