@@ -38,10 +38,9 @@ def register_user (name, board_size, number_of_mines):
 
     return name, board_size, number_of_mines
 
-name = None
-board_size = None
-number_of_mines = None
 
+
+#////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
