@@ -34,11 +34,12 @@ def register_user (name, board_size, number_of_mines):
             if is_number_of_mines_valid(False):
                 print(f"{name}, you have entered illegal number of mines")
                 name, board_size, number_of_mines = None
+            return name, board_size, number_of_mines
 
         else:
             print(f"{name}, you have entered illegal board size")
             name, board_size, number_of_mines = None
-
+        return name, board_size, number_of_mines
 
     else:
         print("Your name is too short")
