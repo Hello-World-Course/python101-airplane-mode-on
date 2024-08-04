@@ -42,10 +42,6 @@ name = None
 board_size = None
 number_of_mines = None
 
-name, board_size, number_of_mines = register_user(name, board_size, number_of_mines)
-
-if number_of_mines != None:
-    print(f"{name}, the board size is: {board_size}, number of mines is: {number_of_mines}, ENJOY!")
 
 
 
