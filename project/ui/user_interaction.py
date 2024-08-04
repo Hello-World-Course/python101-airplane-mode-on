@@ -2,7 +2,7 @@
 def is_name_valid(name):
     if len(name) < 3:
         return False
-    return True, name
+    return True
 
 # board size check
 def is_board_size_valid(board_size):
