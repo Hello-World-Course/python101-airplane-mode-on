@@ -1,18 +1,21 @@
 # name length check
 def is_name_valid(name):
     if len(name) < 3:
+        name = None
         return False
     return True
 
 # board size check
 def is_board_size_valid(board_size):
     if board_size < 1 or board_size >= 26:
+        board_size = None
         return False
-        return True
+    return True
 
 # number of mines check
 def is_number_of_mines_valid(board_size, number_of_mines):
     if number_of_mines < 1 or number_of_mines > ((board_size * board_size) / 2):
+        number_of_mines = None
         return False
     return True
 
