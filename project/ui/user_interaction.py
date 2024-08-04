@@ -16,7 +16,7 @@ def is_number_of_mines_valid(board_size, number_of_mines):
         return False
     return True
 
-def register_user(name, board_size, number_of_mines):
+def register_user():
     name = str(input("Hello, what's your name?"))
     if is_name_valid(True):
 
