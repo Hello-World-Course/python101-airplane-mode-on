@@ -19,12 +19,12 @@ def is_number_of_mines_valid(board_size, number_of_mines):
 
 def register_user():
     name = str(input("Hello, what's your name?"))
-    if is_name_valid(True):
+    if is_name_valid(name):
 
         board_size = int(input(f" please choose board size, {name}"))
-        if is_board_size_valid(True):
+        if is_board_size_valid(board_size):
             number_of_mines = int(input(f"for board size {board_size}, choose number of mines to allocate, {name}"))
-            if is_number_of_mines_valid(False):
+            if not is_number_of_mines_valid(board_size, number_of_mines):
                 print(f"{name}, you have entered illegal number of mines")
                 name, board_size, number_of_mines = None
             return name, board_size, number_of_mines
