@@ -12,7 +12,4 @@ def parse_cmd(command):
         split_parameters = []
     return input_command, parameters
 
-command = '"test", [\'1\', \'23\', \'4\', \'5\', \'67\', \'8\']'
 
-
-print(parse_cmd(command))
