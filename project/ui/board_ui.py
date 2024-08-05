@@ -10,4 +10,4 @@ def parse_cmd(command):
             split_parameters = parameters
     else:
         split_parameters = []
-    return [input_command] + parameters, split_parameters
+    return [input_command] + parameters
