@@ -1,7 +1,7 @@
 
 
 def is_on_board(x, y, board):
-    if x < 0 or x >= len(board) or y < 0 or y >= len(board):
+    if x < 0 or x >= len(board) or y < 0 or y >= len(board[0]):
         return False
     return True
 
