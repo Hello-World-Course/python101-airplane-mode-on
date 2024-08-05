@@ -7,6 +7,6 @@ def is_on_board(x, y, board):
 
 def safe_set_value(x, y, value, board):
     if is_on_board(x, y, board) is True:
-        board[x - 1][y - 1] = value
+        board[x][y] = value
         return True
     return False
